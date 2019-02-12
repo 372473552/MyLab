@@ -1,4 +1,4 @@
-package bubbleSort;
+package Sort;
 
 public class Num {
 
@@ -18,7 +18,7 @@ public void setN(int n) {
 
 @Override
 public String toString() {
-	return "Num [n=" + n + "]";
+	return  ""+n ;
 }
 
 

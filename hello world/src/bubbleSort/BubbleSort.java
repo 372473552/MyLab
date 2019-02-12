@@ -19,7 +19,7 @@ public class BubbleSort {
 		
 		System.out.print("organzise digitals is:");
 		for(int i=0;i<arrA.length;i++) {
-			System.out.print(arrA[i].toString()+"\t");
+			System.out.print("Num "+(i+1)+" is:"+arrA[i]+"\t");
 		}
 		System.out.println();
 	
@@ -28,7 +28,7 @@ public class BubbleSort {
 		System.out.print("after sort digitals is:");
 
 		for(int i=0;i<arrA.length;i++) {
-			System.out.print(arrA[i]+"\t");
+			System.out.print("Num "+(i+1)+" is:"+arrA[i]+"\t");
 		}
 		
 	}
