@@ -1,10 +1,11 @@
 package Sort;
 import java.lang.*;
+import java.util.regex.*;
 import java.util.Scanner;
 import java.util.Random;
 import Sort.*;
 public class Sort {
-
+ 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
@@ -25,15 +26,16 @@ public class Sort {
 			}
 		}
 		SortMachine sort=new SortMachine();
-		System.out.println("please type funtion(b=BubbleSort;s=SelectSort):");
+		System.out.println("please type funtion(b=BubbleSort;s=SelectSort) and orderby(desc;asc):");
 		String cmd=input.next();
-		switch(cmd) {
+		String[] cmds=cmd.split(",");
+		switch(cmds[0]) {
 		case "b":
-			arrA=sort.bubbleSort(arrA);
+			sort.bubbleSort(arrA,cmds[1]);
 			System.out.print("after BubbleSort digitals is:\n");
 			break;
 		case "s":
-			arrA=sort.selectSort(arrA);
+			sort.selectSort(arrA,cmds[1]);
 			System.out.print("after SelectSort digitals is:\n");
 			break;
 		default:
@@ -44,7 +46,7 @@ public class Sort {
 		for(int i=0;i<arrA.length;i++) {
 			System.out.print("Num "+(i+1)+" is:"+arrA[i]+"\t");
 		}
-		
+		input.close();
 	}
 
 }
