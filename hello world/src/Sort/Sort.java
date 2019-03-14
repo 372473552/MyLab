@@ -38,6 +38,11 @@ public class Sort {
 			sort.selectSort(arrA,cmds[1]);
 			System.out.print("after SelectSort digitals is:\n");
 			break;
+		case "i":
+			InsertSort is=new InsertSort(arrA,cmds[1]);
+			is.sort();
+			System.out.print("after InsertSort digitals is:\n");
+			break;
 		default:
 			break;
 		}
