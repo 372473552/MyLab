@@ -1,11 +1,20 @@
 package Sort;
 import java.lang.*;
 import java.util.regex.*;
+
+
+
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Iterator;
 import java.util.Random;
 import Sort.*;
 public class Sort {
  
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
@@ -42,6 +51,24 @@ public class Sort {
 			InsertSort is=new InsertSort(arrA,cmds[1]);
 			is.sort();
 			System.out.print("after InsertSort digitals is:\n");
+			break;
+		case "l":
+			ArrayList<Num> al=new ArrayList<>(Arrays.asList(arrA));
+			al.sort(new Comparator<Num>() {
+
+				@Override
+				public int compare(Num n1,Num n2) {
+					// TODO Auto-generated method stub
+					
+					return n1.compareTo(n2);
+				}
+				
+			});
+			
+			arrA=al.toArray(arrA);
+			
+			System.out.print("after ListSort digitals is:\n");
+		
 			break;
 		default:
 			break;
