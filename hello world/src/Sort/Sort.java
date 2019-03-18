@@ -9,7 +9,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 import java.util.Random;
 import Sort.*;
 public class Sort {
@@ -69,6 +71,18 @@ public class Sort {
 			
 			System.out.print("after ListSort digitals is:\n");
 		
+			break;
+		case "m":
+			Map<Integer,Num> map=new HashMap<>();
+			for(int i=0;i<arrA.length;i++) {
+				map.put(i, arrA[i]);
+			}
+			Iterator<Map.Entry<Integer,Num>> it=map.entrySet().iterator();
+			while(it.hasNext()) {
+				System.out.print(" \t"+it.next());
+			}
+			
+			System.out.print("after MapSort digitals is:\n");
 			break;
 		default:
 			break;
