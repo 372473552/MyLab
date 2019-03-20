@@ -7,11 +7,12 @@ public class Account {
 	}
 
 	protected double money;
+	
 
 	public double getMoney() {
 		return money;
 	}
-
+ 
 	public boolean deposit(double amt){
 		if(amt>0) {
 			money+=amt;

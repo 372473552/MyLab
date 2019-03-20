@@ -4,10 +4,20 @@ public class Bank {
 private Customer [] customers;
 private int numberofCustomer;
 
-public Bank() {
+private static Bank bank;
+
+private Bank() {
 	 customers=new Customer [50];
 	 
 }
+public static Bank getBankInstance() {
+	if(bank==null) {
+		bank=new Bank();
+	}
+		return bank;
+	
+}
+
 public void addCustomer(String f,String l) {
 	customers[numberofCustomer]=new Customer(f, l);
 	numberofCustomer++;
