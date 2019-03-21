@@ -1,13 +1,16 @@
 package myBank;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Bank {
-private Customer [] customers;
-private int numberofCustomer;
+private List<Customer> customers;
+
 
 private static Bank bank;
 
 private Bank() {
-	 customers=new Customer [50];
+	customers=new ArrayList<>();
 	 
 }
 public static Bank getBankInstance() {
@@ -19,12 +22,12 @@ public static Bank getBankInstance() {
 }
 
 public void addCustomer(String f,String l) {
-	customers[numberofCustomer]=new Customer(f, l);
-	numberofCustomer++;
+	customers.add(new Customer(f, l));
+	
 }
 public Customer getCustomer(int index) {
-	if(index<numberofCustomer) {
-		return customers[index];
+	if(index>=0) {
+		return customers.get(index);
 	}else {
 		System.out.println("ÊäÈëÓĞÎó£¡");
 		return null;
@@ -32,7 +35,7 @@ public Customer getCustomer(int index) {
 	
 }
 public int getNumberofCustomer() {
-	return numberofCustomer;
+	return customers.size();
 }
 
 

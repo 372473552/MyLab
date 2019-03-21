@@ -1,30 +1,32 @@
 package myBank;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Customer {
 	private String	firstName;
 	
 	private String  lastName;
-	private Account [] acc1;
+	private List<Account> accounts;
 
 	
-	private int NumberofAccount=0;
 	
 	public Customer(String firstName, String lastName) {
 		
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.acc1=new Account [5];
+		accounts=new ArrayList<>();
 	}
 	
 	public void addAccount(Account acc) {
 		
-		acc1[NumberofAccount]=acc;
-		NumberofAccount++;
+		accounts.add(acc);
+		
 	}
 
 	public Account getAccount(int index) {
-		if(index<NumberofAccount) {
-			return acc1[index];
+		if(index>=0) {
+			return accounts.get(index);
 		}else {
 			return null;
 		}
@@ -38,7 +40,7 @@ public class Customer {
 		return lastName;
 	}
 	public int getNumberofAccount() {
-		return NumberofAccount;
+		return accounts.size();
 	}
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
